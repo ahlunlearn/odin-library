@@ -19,7 +19,7 @@
 
 .books-section{
     background-color: azure;
-    height: calc(100vh - 85px);
+    height: calc(100vh - 100px);
     padding-top: 50px;
 }
 .books-section .container .addbook-btn{
@@ -30,7 +30,7 @@
 
 .books-section .container .books-cards{
     display: grid;
-    grid-auto-rows: 250px;
+    grid-auto-rows: 300px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 250px));
     gap: 20px;
 }
@@ -41,7 +41,7 @@
     background-color: beige;
     border-radius: 20px;
     display: grid;
-    grid-template-rows: repeat(4, 40px);
+    grid-template-rows: repeat(5, 40px);
     gap: 10px;
     align-content: center;
     padding: 10px;
@@ -71,4 +71,11 @@
 }
 .hide{
     visibility: hidden;
+}
+
+.read-btn{
+    background-color: lightcoral;
+}
+.read{
+    background-color: greenyellow;
 }
