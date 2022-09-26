@@ -66,10 +66,11 @@ document.querySelector('.cancel-btn').addEventListener('click',()=>{
     document.getElementById('newbook').reset();
     document.querySelector('.newbook-form').classList.add('hide')
 })
-document.querySelector('.submit-btn').addEventListener('click',()=>{
+document.querySelector('.submit-btn').addEventListener('click',(e)=>{
+    e.preventDefault()
     const form = document.querySelector('form');
     const data = Object.fromEntries(new FormData(form).entries());
-    addBookToLibrary(data.title, data.author, data.pages, (data.isread || false))
+    if (data.title && data.pages){addBookToLibrary(data.title, data.author, data.pages, (data.isread || false))}
     document.getElementById('newbook').reset();
     document.querySelector('.newbook-form').classList.add('hide')
     displayBooks()

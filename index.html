@@ -24,23 +24,22 @@
         </div>
     </div>
     <div class="newbook-form hide">
-        <form action=""  id="newbook">
+        <form id="newbook">
             <label for="newtitle">Title*</label>
-            <input type="text" name="title" id="newtitle" minlength="1" required>
+            <input type="text" name="title" id="newtitle" minlength="1" required/>
 
             <label for="newauthor">Author</label>
-            <input type="text" name="author" id="newauthor" minlength="1">
+            <input type="text" name="author" id="newauthor" minlength="1"/>
 
             <label for="newpages">Pages*</label>
-            <input type="number" name="pages" id="newpages" required>
+            <input type="number" name="pages" id="newpages" required/>
 
             <label for="isread">Read or not?</label>
-            <input type="checkbox" name="isread" id="isread">
+            <input type="checkbox" name="isread" id="isread"/>
 
-            <div class="newbook-btns">
-                <input type="button" value="cancel" class="cancel-btn">
-                <input type="button" value="submit" class="submit-btn">
-            </div>
+            <input type="button" value="cancel" class="cancel-btn"/>
+            <button type="submit" class="submit-btn">Submit</button>
+            <!-- <input type="submit" value="submit" class="submit-btn"> -->
         </form>
     </div>
     <script src="script.js"></script>
