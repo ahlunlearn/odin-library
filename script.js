@@ -61,15 +61,17 @@ function displayBooks(){
 
 document.querySelector('.addBook').addEventListener('click',()=>{
     document.querySelector('.newbook-form').classList.remove('hide')
+    document.querySelector('.newbook-form input').focus()
 })
 document.querySelector('.cancel-btn').addEventListener('click',()=>{
     document.getElementById('newbook').reset();
     document.querySelector('.newbook-form').classList.add('hide')
 })
-document.querySelector('.submit-btn').addEventListener('click',(e)=>{
+document.querySelector('.newbook-form').addEventListener('submit',(e)=>{
     e.preventDefault()
     const form = document.querySelector('form');
     const data = Object.fromEntries(new FormData(form).entries());
+    console.log(data)
     if (data.title && data.pages){addBookToLibrary(data.title, data.author, data.pages, (data.isread || false))}
     document.getElementById('newbook').reset();
     document.querySelector('.newbook-form').classList.add('hide')

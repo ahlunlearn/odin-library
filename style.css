@@ -27,6 +27,10 @@
     display: flex;
     justify-content: center;
 }
+.books-section .container .addbook-btn > input{
+    padding: 30px 50px;
+    font-size: xx-large;
+}
 
 .books-section .container .books-cards{
     display: grid;
