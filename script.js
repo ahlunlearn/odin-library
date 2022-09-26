@@ -4,6 +4,7 @@ function Book(title, author, pages, isRead){
     this.title = title
     this.author = author
     this.pages = pages
+    this.id = myLibrary.length
     this.info = function(){
         return `${title} by ${author}, ${pages} pages, ${isRead?'finished':'not read yet'}`
     }
@@ -17,7 +18,11 @@ function addBookToLibrary(title, author, pages, isRead){
 
 function displayBooks(){
     let bookItems = document.querySelector('.books-cards')
+    bookItems.innerHTML = ''
     for(let book of myLibrary){
+        if (!book){
+            continue
+        }
         let bookCard = document.createElement('div')
         bookCard.classList.add('book-item')
         let title = document.createElement('h2')
@@ -34,6 +39,7 @@ function displayBooks(){
         delbtn.setAttribute('value','delete')
         delbtn.classList.add('del-btn')
         bookCard.appendChild(delbtn)
+        bookCard.setAttribute('book-id',book.id)
         bookItems.appendChild(bookCard)
     }
 }
@@ -49,13 +55,16 @@ document.querySelector('.cancel-btn').addEventListener('click',()=>{
 document.querySelector('.submit-btn').addEventListener('click',()=>{
     const form = document.querySelector('form');
     const data = Object.fromEntries(new FormData(form).entries());
-    console.log(data)
+    addBookToLibrary(data.title, data.author, data.pages, (data.isread || false))
     document.getElementById('newbook').reset();
     document.querySelector('.newbook-form').classList.add('hide')
+    displayBooks()
 })
 
 document.querySelector('.books-cards').addEventListener('click',(e)=>{
     if(e.target.classList.contains('del-btn')){
+        let id = e.target.parentNode.getAttribute('book-id')
+        myLibrary[Number(id)] = null
         e.target.parentNode.remove()
     }
 })
