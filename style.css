@@ -1,0 +1,73 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+.header{
+    margin: 20px 0;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .title{
+    font-size: xx-large;
+}
+.header .container input{
+    padding: 10px 20px;
+}
+
+.books-section{
+    background-color: azure;
+    height: calc(100vh - 85px);
+    padding-top: 50px;
+}
+.books-section .container .addbook-btn{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.books-section .container .books-cards{
+    display: grid;
+    grid-auto-rows: 250px;
+    grid-auto-columns: 250px;
+}
+.books-section .container .books-cards .book-item *{
+    margin: 0;
+}
+.books-section .container .books-cards .book-item{
+    background-color: beige;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(4, 40px);
+    gap: 10px;
+    align-content: center;
+    padding: 10px;
+}
+
+.newbook-form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.newbook-form form{
+    display: grid;
+    grid-auto-columns: 200px;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    background-color: azure;
+    width: 400px;
+    padding: 20px 0;
+    margin: 20px auto;
+    margin-top: 200px;
+}
+.hide{
+    visibility: hidden;
+}
