@@ -29,6 +29,11 @@ function displayBooks(){
         let pages = document.createElement('p')
         pages.textContent = book.pages
         bookCard.appendChild(pages)
+        let delbtn = document.createElement('input')
+        delbtn.setAttribute('type','button')
+        delbtn.setAttribute('value','delete')
+        delbtn.classList.add('del-btn')
+        bookCard.appendChild(delbtn)
         bookItems.appendChild(bookCard)
     }
 }
@@ -42,7 +47,6 @@ document.querySelector('.cancel-btn').addEventListener('click',()=>{
     document.querySelector('.newbook-form').classList.add('hide')
 })
 document.querySelector('.submit-btn').addEventListener('click',()=>{
-    // let formData =  document.querySelectorAll('.newbook-form > form > input');
     const form = document.querySelector('form');
     const data = Object.fromEntries(new FormData(form).entries());
     console.log(data)
@@ -50,5 +54,14 @@ document.querySelector('.submit-btn').addEventListener('click',()=>{
     document.querySelector('.newbook-form').classList.add('hide')
 })
 
+document.querySelector('.books-cards').addEventListener('click',(e)=>{
+    if(e.target.classList.contains('del-btn')){
+        e.target.parentNode.remove()
+    }
+})
+
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295,false)
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295,false)
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295,false)
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295,false)
 displayBooks()

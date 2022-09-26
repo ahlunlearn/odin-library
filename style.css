@@ -31,7 +31,8 @@
 .books-section .container .books-cards{
     display: grid;
     grid-auto-rows: 250px;
-    grid-auto-columns: 250px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 250px));
+    gap: 20px;
 }
 .books-section .container .books-cards .book-item *{
     margin: 0;
